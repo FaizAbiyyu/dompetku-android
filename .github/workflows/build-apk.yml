@@ -23,9 +23,10 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Ensure Android Platform Scaffold
+      - name: Generate Clean Android Platform Files
         run: |
-          flutter create --platforms=android --org com.dompetku.app .
+          rm -rf android
+          flutter create --platforms=android --org com.dompetku.app --project-name dompetku .
 
       - name: Install Dependencies
         run: |
